@@ -14,6 +14,7 @@ void display_trip(list<Goat> trip);
 int main_menu();
 
 int main() {
+    /*
     srand(time(0));
     bool again;
 
@@ -27,9 +28,10 @@ int main() {
     string colors[SZ_COLORS];
     i = 0;
     while (fin1 >> colors[i++]);
-    fin1.close();
+    fin1.close();*/
 
-
+    //test main menu
+    cout << main_menu();
 
 
     return 0;
