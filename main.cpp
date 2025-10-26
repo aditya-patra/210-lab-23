@@ -36,6 +36,8 @@ int main() {
     add_goat(trip, names, colors);
     display_trip(trip);
     cout << select_goat(trip);
+    delete_goat(trip);
+    display_trip(trip);
 
 
 
@@ -53,7 +55,11 @@ int select_goat(list<Goat> trip) {
         cout << "Not valid option" << endl;
     }
 }
-void delete_goat(list<Goat> &trip);
+void delete_goat(list<Goat> &trip) {
+    int goat_num = select_goat(trip);
+    trip.erase(goat_num);
+}
+
 void add_goat(list<Goat> &trip, string name[], string color[]) {
     Goat * goat = new Goat(name[0], (int)(rand()) % (MAX_AGE+1), color[0]);
     trip.push_back(*goat);
