@@ -73,8 +73,9 @@ void delete_goat(list<Goat> &trip) {
     for(auto i = trip.begin(); i != trip.end(); i++) {
         if (ctr == goat_num) {
             trip.erase(i);
+            return;
         }
-        break;
+        ctr += 1;
     }
 }
 
@@ -88,6 +89,7 @@ void display_trip(list<Goat> trip) {
         cout << "[" << ctr << "] " << (*i).get_name() << " (" << (*i).get_age() << ", " << (*i).get_color() << ")" << endl;
         ctr++;
     }
+    cout << endl;
 }
 
 int main_menu() {
