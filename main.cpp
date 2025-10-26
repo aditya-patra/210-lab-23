@@ -35,3 +35,14 @@ int main() {
     return 0;
 }
 
+int main_menu() {
+    int input;
+    while(true) {
+        cout << "*** GOAT MANAGER 3001 ***\n[1] Add a goat\n[2] Delete a goat\n[3] List goats\n[4] Quit\nChoice --> " << endl;
+        cin >> input;
+        if (input > 0 && input < 5) {
+            return input;
+        }
+        cout << "Invalid input" << endl;
+    }
+}
