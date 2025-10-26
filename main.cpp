@@ -30,13 +30,25 @@ int main() {
     fin1.close();
 
     list<Goat> trip;
+    int num_goats_made = 0;
+    int usr_choice;
 
-    //test main menu
-    cout << main_menu();
-    add_goat(trip, names, colors);
-    display_trip(trip);
-    delete_goat(trip);
-    display_trip(trip);
+    while (true) {
+        usr_choice = main_menu();
+        if (usr_choice == 1) {
+            add_goat(trip);
+        }
+        else if (usr_choice == 2) {
+            delete_goat(trip);
+        }
+        else if (usr_choice == 3) {
+            list_goats(trip);
+        }
+        else {
+            cout << "Bye Bye";
+            break;
+        }
+    }
 
 
 
@@ -50,7 +62,6 @@ int select_goat(list<Goat> trip) {
         cin >> usr_choice;
         if (usr_choice >= 1 && usr_choice <= trip.size()) {
             return usr_choice-1;
-            cout << "b" << endl;
         }
         cout << "Not valid option" << endl;
     }
@@ -69,7 +80,6 @@ void delete_goat(list<Goat> &trip) {
 void add_goat(list<Goat> &trip, string name[], string color[]) {
     Goat * goat = new Goat(name[0], (int)(rand()) % (MAX_AGE+1), color[0]);
     trip.push_back(*goat);
-    cout << name[0];
 }
 void display_trip(list<Goat> trip) {
     int ctr = 1;
