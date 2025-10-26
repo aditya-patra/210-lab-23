@@ -35,7 +35,6 @@ int main() {
     cout << main_menu();
     add_goat(trip, names, colors);
     display_trip(trip);
-    cout << select_goat(trip);
     delete_goat(trip);
     display_trip(trip);
 
@@ -51,6 +50,7 @@ int select_goat(list<Goat> trip) {
         cin >> usr_choice;
         if (usr_choice >= 1 && usr_choice <= trip.size()) {
             return usr_choice-1;
+            cout << "b" << endl;
         }
         cout << "Not valid option" << endl;
     }
