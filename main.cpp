@@ -60,6 +60,7 @@ int select_goat(list<Goat> trip) {
     int usr_choice;
     while (true) {
         display_trip(trip);
+        cout << "Enter the index of the goat you want to select: ";
         cin >> usr_choice;
         if (usr_choice >= 1 && usr_choice <= trip.size()) {
             return usr_choice-1;
