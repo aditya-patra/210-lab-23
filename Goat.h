@@ -13,6 +13,21 @@ private:
 public: 
     Goat()                          { name = ""; age = 0; color = ""; }
     // write three more constructors
+    Goat(string Name) {
+        name = Name;
+        age = 0;
+        color = "";
+    }
+    Goat(string Name, int Age) {
+        name = Name;
+        age = age;
+        color = "";
+    }
+    Goat(string Name, int Age, string Color) {
+        name = Name;
+        age = age;
+        color = Color;
+    }
 
     // setters and getters
     void set_name(string n)         { name = n; };
