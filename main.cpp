@@ -45,6 +45,7 @@ int select_goat(list<Goat> trip);
 void delete_goat(list<Goat> &trip);
 void add_goat(list<Goat> &trip, string name[], string color[]) {
     Goat * goat = new Goat(name[0], (int)(rand()) % (MAX_AGE+1), color[0]);
+    trip.push_back(*goat);
     cout << name[0];
 }
 void display_trip(list<Goat> trip) {
