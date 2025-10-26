@@ -43,7 +43,7 @@ void add_goat(list<Goat> &trip, string [], string []);
 void display_trip(list<Goat> trip) {
     int ctr = 1;
     for(auto i = trip.begin(); i != trip.end(); i++){
-        cout << "[" << ctr+1 << "] " << *i.getName() << " (" << *i.getAge() << ", " << *i.getColor() << ")" << endl;
+        cout << "[" << ctr+1 << "] " << *i.get_name() << " (" << *i.get_age() << ", " << *i.get_color() << ")" << endl;
         ctr++;
     }
 }
