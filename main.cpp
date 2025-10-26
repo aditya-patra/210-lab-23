@@ -41,7 +41,17 @@ int main() {
     return 0;
 }
 
-int select_goat(list<Goat> trip);
+int select_goat(list<Goat> trip) {
+    int usr_choice;
+    while (true) {
+        display_trip(trip);
+        cin >> usr_choice;
+        if (usr_choice >= 0 && usr_choice < trip.size()) {
+            return usr_choice;
+        }
+        cout << "Not valid option" << endl;
+    }
+}
 void delete_goat(list<Goat> &trip);
 void add_goat(list<Goat> &trip, string name[], string color[]) {
     Goat * goat = new Goat(name[0], (int)(rand()) % (MAX_AGE+1), color[0]);
