@@ -6,6 +6,7 @@
 using namespace std;
 
 const int SZ_NAMES = 200, SZ_COLORS = 25, MAX_AGE = 20;
+int num_goats_made = 0;
 
 int select_goat(list<Goat> trip);
 void delete_goat(list<Goat> &trip);
@@ -30,19 +31,19 @@ int main() {
     fin1.close();
 
     list<Goat> trip;
-    int num_goats_made = 0;
     int usr_choice;
 
     while (true) {
         usr_choice = main_menu();
         if (usr_choice == 1) {
-            add_goat(trip);
+            add_goat(trip, names, colors);
+            num_goats_made++;
         }
         else if (usr_choice == 2) {
             delete_goat(trip);
         }
         else if (usr_choice == 3) {
-            list_goats(trip);
+            display_trip(trip);
         }
         else {
             cout << "Bye Bye";
@@ -78,7 +79,7 @@ void delete_goat(list<Goat> &trip) {
 }
 
 void add_goat(list<Goat> &trip, string name[], string color[]) {
-    Goat * goat = new Goat(name[0], (int)(rand()) % (MAX_AGE+1), color[0]);
+    Goat * goat = new Goat(name[num_goats_made % SZ_NAMES], (int)(rand()) % (MAX_AGE+1), color[num_goats_made % SZ_COLORS]);
     trip.push_back(*goat);
 }
 void display_trip(list<Goat> trip) {
