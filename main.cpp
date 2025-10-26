@@ -14,7 +14,6 @@ void display_trip(list<Goat> trip);
 int main_menu();
 
 int main() {
-    /*
     srand(time(0));
     bool again;
 
@@ -28,13 +27,25 @@ int main() {
     string colors[SZ_COLORS];
     i = 0;
     while (fin1 >> colors[i++]);
-    fin1.close();*/
+    fin1.close();
 
     //test main menu
     cout << main_menu();
+    displayMenu();
 
 
     return 0;
+}
+
+int select_goat(list<Goat> trip);
+void delete_goat(list<Goat> &trip);
+void add_goat(list<Goat> &trip, string [], string []);
+void display_trip(list<Goat> trip) {
+    int ctr = 1;
+    for(auto i = trip.begin(); i != trip.end(); i++){
+        cout << "[" << ctr+1 << "] " << *i.getName() << " (" << *i.getAge() << ", " << *i.getColor() << ")" << endl;
+        ctr++;
+    }
 }
 
 int main_menu() {
