@@ -57,7 +57,13 @@ int select_goat(list<Goat> trip) {
 }
 void delete_goat(list<Goat> &trip) {
     int goat_num = select_goat(trip);
-    trip.erase(goat_num);
+    int ctr = 0;
+    for(auto i = trip.begin(); i != trip.end(); i++) {
+        if (ctr == goat_num) {
+            trip.erase(i);
+        }
+        break;
+    }
 }
 
 void add_goat(list<Goat> &trip, string name[], string color[]) {
